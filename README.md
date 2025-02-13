@@ -43,6 +43,7 @@ const MyComponent = () => {
 ### 3. Using `createEffectWithTrigger`
 
 The `createEffectWithTrigger` function allows you to create an effect that triggers when a specific observable updates.
+Always use it outside the components
 
 ```jsx
 import React from 'react';
@@ -78,6 +79,7 @@ const TargetComponent = () => {
 ### 4. Using `createDispachableEffect`
 
 The `createDispachableEffect` function allows you to create an effect that can be dispatched manually.
+Always use it outside the components
 
 ```jsx
 import React from 'react';
@@ -102,32 +104,6 @@ const Subscriber = () => {
             {isLoading && <p>Loading...</p>}
             {isError && <p>Error occurred</p>}
             {isResolved && <p>Data fetched: {state}</p>}
-        </div>
-    );
-};
-```
-
-### Example Usage
-
-```jsx
-import React from 'react';
-import { useObservable, createEffectWithTrigger } from 'react-observable';
-
-//always create effects outside components
-createEffectWithTrigger('myObservable', 'anotherObservable', async (val) => {
-    const result = await fetchSomeData(val);
-    return result;
-});
-
-const MyComponent = () => {
-    const { state, isLoading, isError, isResolved, dispatch } = useObservable('myObservable', 'initialValue');
-
-    return (
-        <div>
-            {isLoading && <p>Loading...</p>}
-            {isError && <p>Error occurred</p>}
-            {isResolved && <p>Data: {state}</p>}
-            <button onClick={() => dispatch('newValue')}>Update Observable</button>
         </div>
     );
 };
