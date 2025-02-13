@@ -9,7 +9,7 @@ The `useObservable` hook allows you to subscribe to an observable and get its st
 
 ```jsx
 import React from 'react';
-import { useObservable } from 'react-observable';
+import { useObservable } from 'react-observable-hooks';
 
 const MyComponent = () => {
     const { state, dispatch } = useObservable('myObservable', 'initialValue');
@@ -29,7 +29,7 @@ The `useSubscribeObservable` hook allows you to subscribe to an observable and e
 
 ```jsx
 import React from 'react';
-import { useSubscribeObservable } from 'react-observable';
+import { useSubscribeObservable } from 'react-observable-hooks';
 
 const MyComponent = () => {
     useSubscribeObservable('myObservable', (value) => {
@@ -47,7 +47,7 @@ Always use it outside the components
 
 ```jsx
 import React from 'react';
-import { useObservable, createEffectWithTrigger } from 'react-observable';
+import { useObservable, createEffectWithTrigger } from 'react-observable-hooks';
 
 createEffectWithTrigger('triggerObservable', 'targetObservable', async (val) => {
     // Perform some async operation
@@ -83,7 +83,7 @@ Always use it outside the components
 
 ```jsx
 import React from 'react';
-import { createDispachableEffect } from 'react-observable';
+import { createDispachableEffect } from 'react-observable-hooks';
 
 //always create effects outside components
 const dispatchEffect = createDispachableEffect('targetObservable', async (val) => {
