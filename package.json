@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "react-observable-hooks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "start": "tsx index.ts"
@@ -9,7 +9,11 @@
   "keywords": [],
   "author": "Ariel Batista <arielbatista_7@hotmail.com>",
   "license": "ISC",
-  "description": "",
+  "description": "react library that allows to create and subscribe to observables, ideally for sharing state across differents components",
+  "repository": {
+    "url": "https://github.com/abatista667/react-observable-hooks",
+    "type": "public"
+  },
   "peerDependencies": {
     "react": ">=17.0.0"
   },
