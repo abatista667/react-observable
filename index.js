@@ -36,12 +36,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getObservable = void 0;
 exports.useObservable = useObservable;
 exports.useSubscribeObservable = useSubscribeObservable;
 exports.createEffectWithTrigger = createEffectWithTrigger;
 exports.createDispachableEffect = createDispachableEffect;
 var react_1 = require("react");
 var observableMap = new Map();
+/***
+ * @function getObservable
+ *
+ * @param name the name of the observable to get
+ * @returns the observable with the given name
+ * if the observable does not exist it will create it
+ */
+var getObservable = function (name) {
+    var observable = observableMap.get(name);
+    if (!observable) {
+        observable = createObservable(name);
+    }
+    return observable;
+};
+exports.getObservable = getObservable;
 function createObservable(name) {
     var subscribers = new Set();
     var observable = {

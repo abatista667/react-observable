@@ -18,6 +18,21 @@ interface Observable<T = any> {
 
 const observableMap = new Map<string, Observable>()
 
+/***
+ * @function getObservable
+ * 
+ * @param name the name of the observable to get
+ * @returns the observable with the given name
+ * if the observable does not exist it will create it
+ */
+export const getObservable = <T>(name: string): Observable<T> => {
+    let observable = observableMap.get(name) as Observable<T>
+    if (!observable) {
+        observable = createObservable(name)
+    }
+    return observable
+}
+
 function createObservable<T>(name: string): Observable<T> {
     const subscribers = new Set<Subscribable>()
 

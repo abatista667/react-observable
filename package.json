@@ -1,10 +1,11 @@
 {
   "type": "module",
   "name": "react-observable-hooks",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "index.js",
   "scripts": {
-    "start": "tsc index.ts"
+    "start": "tsc index.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Ariel Batista <arielbatista_7@hotmail.com>",
@@ -18,7 +19,18 @@
     "react": ">=17.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.8",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "^5.7.3"
   }
 }
